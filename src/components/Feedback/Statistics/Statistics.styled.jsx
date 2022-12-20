@@ -5,8 +5,11 @@ export const MainData = styled.ul`
   padding: 0;
   list-style: none;
   font-size: 20px;
+`;
 
-  > li {
-    padding-bottom: 5px;
-  }
+export const Aftermath = styled.p`
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  font-size: 20px;
 `;

@@ -1,11 +1,21 @@
+import PropTypes from 'prop-types';
 import { Button } from './FeedbackBtn.styled';
 
-export const FeedbackBtn = ({ option }) => {
+export const FeedbackBtn = ({ option, handleClick }) => {
   return (
-    <Button type="button" style={{ backgroundColor: getRandomHexColor() }}>
+    <Button
+      type="button"
+      style={{ backgroundColor: getRandomHexColor() }}
+      onClick={handleClick}
+    >
       {option}
     </Button>
   );
+};
+
+FeedbackBtn.propTypes = {
+  option: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 function getRandomHexColor() {

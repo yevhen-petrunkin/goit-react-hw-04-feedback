@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Aftermath = styled.p`
+export const Message = styled.p`
   margin: 0;
   padding: 0;
   padding-bottom: 5px;
