@@ -1,21 +1,15 @@
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { MainData, Aftermath } from './Statistics.styled';
 import { StatItem } from './StatItem/StatItem';
 import { Notification } from './Notification/Notification';
 
 export const Statistics = ({ stats, total, positivePercentage }) => {
+  console.log(total);
   return total ? (
     <>
       <MainData>
         {Object.keys(stats).map(stat => {
-          const li = {};
-          li.id = nanoid();
-          return (
-            <StatItem key={li.id} stats={stats} stat={stat}>
-              {stat}: {stats[stat]}
-            </StatItem>
-          );
+          return <StatItem key={stat} label={stat} value={stats[stat]} />;
         })}
       </MainData>
       <Aftermath>Total: {total}</Aftermath>

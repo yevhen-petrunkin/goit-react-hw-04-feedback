@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import { Stat } from './StatItem.styled';
 
-export const StatItem = ({ stats, stat }) => {
+export const StatItem = ({ label, value }) => {
   return (
     <Stat>
-      {stat}: {stats[stat]}
+      {label}: {value}
     </Stat>
   );
 };
 
 StatItem.propTypes = {
-  stats: PropTypes.objectOf(PropTypes.number).isRequired,
-  stat: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
