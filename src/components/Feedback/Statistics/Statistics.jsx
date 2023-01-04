@@ -4,7 +4,6 @@ import { StatItem } from './StatItem/StatItem';
 import { Notification } from './Notification/Notification';
 
 export const Statistics = ({ stats, total, positivePercentage }) => {
-  console.log(total);
   return total ? (
     <>
       <MainData>
