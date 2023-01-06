@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { SubHeading } from './Feedback.styled';
 import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
+import { reducer } from 'reducers/reducer';
 
 export const Feedback = () => {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
+  const [state, dispatch] = useReducer(reducer, {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
 
   const onLeaveFeedback = evt => {
-    const option = evt.target.textContent;
-    switch (option) {
-      case 'good':
-        setGood(prevGood => prevGood + 1);
-        break;
-      case 'neutral':
-        setNeutral(prevNeutral => prevNeutral + 1);
-        break;
-      case 'bad':
-        setBad(prevBad => prevBad + 1);
-        break;
-      default:
-        return;
-    }
+    const action = evt.target.textContent;
+    dispatch(action);
   };
+
+  const { good, neutral, bad } = state;
 
   const countTotalFeedback = () => good + neutral + bad;
 
