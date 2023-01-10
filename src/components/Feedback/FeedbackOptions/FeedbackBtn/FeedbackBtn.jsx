@@ -6,7 +6,7 @@ export const FeedbackBtn = ({ option, handleClick }) => {
     <Button
       type="button"
       style={{ backgroundColor: getRandomHexColor() }}
-      onClick={handleClick}
+      onClick={() => handleClick(option)}
     >
       {option}
     </Button>

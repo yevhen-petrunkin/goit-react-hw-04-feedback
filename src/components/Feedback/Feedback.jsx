@@ -12,10 +12,7 @@ export const Feedback = () => {
     bad: 0,
   });
 
-  const onLeaveFeedback = evt => {
-    const action = evt.target.textContent;
-    dispatch(action);
-  };
+  const onLeaveFeedback = option => dispatch(option);
 
   const { good, neutral, bad } = state;
 
